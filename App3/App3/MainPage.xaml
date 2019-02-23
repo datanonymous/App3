@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             x:Class="App3.MainPage"
+             Padding="0,20,0,0">
+
+    <StackLayout VerticalOptions="Center"
+               HorizontalOptions="Center">
+        <!-- Place new controls here -->
+
+        <Label Text="{Binding Source={x:Reference slider},
+            Path=Value, 
+            StringFormat='Value is {0:F3}'}" 
+               x:Name="label" 
+               Opacity="{Binding Source={x:Reference slider}, Path=Value}"/>
+        <Slider 
+            x:Name = "slider"/>
+        <BoxView Color="ForestGreen" Opacity="{Binding Source={x:Reference slider}, Path=Value}"/>
+
+    </StackLayout>
+
+</ContentPage>
